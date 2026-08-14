@@ -23,8 +23,7 @@ const noindex = forceNoindex || import.meta.env.PUBLIC_NOINDEX !== 'false';
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const activePage = pathname === '/' ? 'home'
   : pathname.startsWith('/about') ? 'about'
-  : pathname.startsWith('/services') && !pathname.startsWith('/service-areas') ? 'services'
-  : pathname.startsWith('/service-areas') ? 'service-areas'
+  : pathname.startsWith('/services') ? 'services'
   : pathname.startsWith('/protocol') ? 'protocol'
   : pathname.startsWith('/contact') ? 'contact'
   : '';
@@ -36,6 +35,7 @@ const activePage = pathname === '/' ? 'home'
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
