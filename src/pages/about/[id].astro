@@ -60,7 +60,7 @@ const { person } = Astro.props;
     <div class="au-cta-inner">
       <h2 class="au-cta-head">Want to talk to our team?</h2>
       <p class="au-cta-body">Reach out and we'll follow up to schedule a short assessment call.</p>
-      <a href="/contact" class="au-cta-btn">Contact Us</a>
+      <a href="/contact" class="au-cta-btn">Schedule A Call</a>
     </div>
   </section>
 
@@ -156,7 +156,7 @@ const { person } = Astro.props;
     gap: 40px;
     max-width: var(--rg-container);
     margin: 0 auto;
-    padding: 40px var(--rg-space-5) 0;
+    padding: 40px var(--rg-space-5) 56px;
   }
 
   .au-article {
@@ -165,9 +165,14 @@ const { person } = Astro.props;
 
   @media (min-width: 768px) {
     .au-container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
       gap: var(--rg-space-7);
-      padding: var(--rg-space-8) var(--rg-space-7) 0;
+      align-items: start;
+      padding: var(--rg-space-8) var(--rg-space-7) var(--rg-space-8);
     }
+
+    .au-article { max-width: none; }
   }
 
   /* Credentials card */
@@ -225,16 +230,10 @@ const { person } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    .au-cred-card { padding: var(--rg-space-6) 40px; }
-
-    .au-cred-group {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: var(--rg-space-5);
-      align-items: baseline;
+    .au-cred-card {
+      max-width: none;
+      padding: var(--rg-space-6) var(--rg-space-5);
     }
-
-    .au-cred-label { margin-bottom: 0; }
   }
 
   /* Posts section */
